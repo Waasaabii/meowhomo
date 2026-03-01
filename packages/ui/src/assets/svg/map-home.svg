@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="nav-icon">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+      
+      /* 选定本机的雷达/心跳脉冲光环 (Radar/Pulse rings) */
+      @keyframes homePulse {
+        0% { transform: scale(0.8); opacity: 0.8; }
+        100% { transform: scale(1.6); opacity: 0; }
+      }
+      /* 屋内外壳微微跳动表示活性 */
+      @keyframes houseBounce {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      .anim-pulse { transform-origin: 12px 14px; animation: homePulse 2s ease-out infinite; }
+      .nav-icon:hover .anim-house { transform-origin: 12px 20px; animation: houseBounce 0.8s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- 底部不断扩散的安全光晕 -->
+  <circle cx="12" cy="14" r="8" class="stroke-main anim-pulse" opacity="0.5" stroke-width="1" />
+
+  <g class="anim-house">
+    <!-- 圆乎乎的猫窝/房子外壳 (Rounded Cat House) -->
+    <path class="stroke-main" fill="var(--bg-color, #ffffff)" d="M 4 10 L 12 3 L 20 10 M 6 8 L 6 20 C 6 21 7 22 8 22 L 16 22 C 17 22 18 21 18 20 L 18 8" />
+    
+    <!-- 屋顶的两个小小猫耳朵作防伪装饰 -->
+    <path class="stroke-main" d="M 8 6 L 8 1 L 11 4" />
+    <path class="stroke-main" d="M 16 6 L 16 1 L 13 4" />
+
+    <!-- 黑暗温暖的猫头型门洞入口 (Cat face shaped door hole) -->
+    <path class="fill-main" d="M 12 18 C 9 18 9 16 9 14 C 9 12 10 12 10 12 L 9 10 L 12 11 L 15 10 L 14 12 C 14 12 15 12 15 14 C 15 16 15 18 12 18 Z" opacity="0.8" />
+  </g>
+</svg>

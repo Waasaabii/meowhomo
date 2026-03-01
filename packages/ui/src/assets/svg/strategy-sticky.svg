@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      
+      /* 黏性/持久状态：毛线团被猫爪死死抱住，产生微微的挣扎/发力颤抖 */
+      @keyframes clingTremble {
+        0%, 100% { transform: rotate(0deg) scale(1); }
+        25% { transform: rotate(2deg) scale(0.98); }
+        75% { transform: rotate(-2deg) scale(1.02); }
+      }
+
+      .anim-yarn {
+        transform-origin: 12px 12px;
+        animation: clingTremble 0.2s cubic-bezier(0,0,1,1) infinite;
+      }
+    </style>
+  </defs>
+
+  <g class="anim-yarn">
+    <!-- 极简毛线团本体 (Yarn Ball) -->
+    <circle cx="12" cy="12" r="7" class="stroke-main" />
+    <!-- 毛线的缠绕纹理 -->
+    <path class="stroke-main" d="M 8 6 C 14 10 17 18 13 18" />
+    <path class="stroke-main" d="M 6 10 C 12 8 16 12 18 10" />
+    <path class="stroke-main" d="M 15 7 C 9 11 8 16 11 18" opacity="0.5" />
+    
+    <!-- 延伸出来的一截线头被紧紧拽住 -->
+    <path class="stroke-main" d="M 12 19 L 10 23" />
+    
+    <!-- 侧面伸出的两个小猫爪，做抱紧死死不放的姿态 -->
+    <path class="stroke-main" d="M 3 13 C 5 13 6 10 5 9" />
+    <path class="stroke-main" d="M 21 11 C 19 11 18 14 19 15" />
+  </g>
+
+</svg>

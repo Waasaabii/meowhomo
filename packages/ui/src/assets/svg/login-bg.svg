@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <style>
+      .stroke-bold { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-opacity: 0.1; }
+      .stroke-thin { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-opacity: 0.05; }
+      .fill-main { fill: currentColor; fill-opacity: 0.05; }
+      
+      /* 背景装饰元素的极其缓慢规律的漂浮游动 (Cinematic slow scroll/float) */
+      @keyframes floatLayer1 {
+        0%, 100% { transform: translateY(0) translateX(0); }
+        50% { transform: translateY(-20px) translateX(10px); }
+      }
+      @keyframes floatLayer2 {
+        0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+        50% { transform: translateY(15px) translateX(-15px) scale(1.05); }
+      }
+      /* 大型透明猫头随着光影呼吸缩放 */
+      @keyframes breatheBg {
+        0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+        50% { transform: scale(1.02) rotate(2deg); opacity: 1; }
+      }
+
+      .layer-1 { animation: floatLayer1 10s ease-in-out infinite; }
+      .layer-2 { animation: floatLayer2 15s ease-in-out infinite; }
+      .bg-hero { transform-origin: 256px 256px; animation: breatheBg 8s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- 登录界面的背景通常需要极简、微克隆、具有视差效果的大幅面暗纹 -->
+  <!-- 使得即便铺满全屏，也不会喧宾夺主，只会提供高级的深海迷航/科技漂浮感 -->
+
+  <!-- Layer 1: 最深处的背景点阵网格与零碎数据块 (Tech Dots & Blocks) -->
+  <g class="layer-1 stroke-thin">
+    <!-- 远处的巨大交叉网络线 (Crosshair Grid) -->
+    <path d="M 0 100 L 512 100 M 0 300 L 512 300 M 0 450 L 512 450" />
+    <path d="M 100 0 L 100 512 M 300 0 L 300 512 M 450 0 L 450 512" />
+    
+    <!-- 散落的像素猫肉垫 (Pixel paw marks) -->
+    <g transform="translate(80, 80) scale(0.5)"><circle cx="10" cy="10" r="10"/><circle cx="0" cy="-5" r="4"/><circle cx="10" cy="-10" r="4"/><circle cx="20" cy="-5" r="4"/></g>
+    <g transform="translate(400, 350) scale(0.8)"><circle cx="10" cy="10" r="10"/><circle cx="0" cy="-5" r="4"/><circle cx="10" cy="-10" r="4"/><circle cx="20" cy="-5" r="4"/></g>
+    <g transform="translate(150, 420) scale(0.3)"><circle cx="10" cy="10" r="10"/><circle cx="0" cy="-5" r="4"/><circle cx="10" cy="-10" r="4"/><circle cx="20" cy="-5" r="4"/></g>
+    <g transform="translate(380, 120) scale(0.6)"><circle cx="10" cy="10" r="10"/><circle cx="0" cy="-5" r="4"/><circle cx="10" cy="-10" r="4"/><circle cx="20" cy="-5" r="4"/></g>
+  </g>
+
+  <!-- Layer 2: 漂浮的线框球体、环形和盾牌结构符号 (Holographic shapes) -->
+  <g class="layer-2 stroke-bold">
+    <!-- 左上角的巨大的倾斜盾牌轮廓 (Giant abstract shield outline) -->
+    <path d="M -50 0 L 100 -50 L 200 50 C 200 200, -50 250, -50 0 Z" stroke-dasharray="20 10" />
+    
+    <!-- 右下角的环绕星轨/星球环 (Orbit rings) -->
+    <ellipse cx="450" cy="450" rx="150" ry="50" transform="rotate(-30 450 450)" />
+    <ellipse cx="450" cy="450" rx="100" ry="30" transform="rotate(60 450 450)" />
+    <circle cx="450" cy="450" r="10" class="fill-main" />
+
+    <!-- 游荡的二次元“星星/十字亮光” (Sparkle cross) -->
+    <path d="M 256 100 L 256 80 M 256 100 L 256 120 M 256 100 L 236 100 M 256 100 L 276 100" />
+    <path d="M 120 300 L 120 290 M 120 300 L 120 310 M 120 300 L 110 300 M 120 300 L 130 300" />
+  </g>
+
+  <!-- 中心前景主角：巨幅半透明的品牌 Logo / 喵娘神明剪影 (Hero Mascot Silhouette) -->
+  <!-- 用于垫在登录框后方，极其淡化以保证文字阅读性 -->
+  <g class="bg-hero fill-main" opacity="0.5">
+    <!-- 包子脸底蕴放大版 -->
+    <path d="M 256 380 C 400 380, 450 250, 450 180 C 450 100, 380 50, 256 50 C 132 50, 62 100, 62 180 C 62 250, 112 380, 256 380 Z" />
+    
+    <!-- 两只巨型猫耳 -->
+    <path d="M 152 120 L 50 -20 L 236 70" />
+    <path d="M 360 120 L 462 -20 L 276 70" />
+
+    <!-- 剪隐形式（挖空）的巨大猫爪肉垫在脸上投影 (Negative space paw in the face center) -->
+    <g fill="#ffffff" transform="translate(256, 250) scale(4)"> <!-- 用页面的默认底色挖孔 -->
+      <path d="M 0 5 C 10 5, 15 -5, 0 -15 C -15 -5, -10 5, 0 5 Z" />
+      <circle cx="-12" cy="-12" r="4" />
+      <circle cx="0" cy="-20" r="4" />
+      <circle cx="12" cy="-12" r="4" />
+    </g>
+  </g>
+
+  <!-- 追加一层极致微弱的噪点或斜线纹理遮罩以增强高级质感 (Scanlines/Pattern overlay) -->
+  <!-- 简单使用巨大的半透明斜线网格填满 -->
+  <pattern id="diagonal-stripe" width="8" height="8" patternUnits="userSpaceOnUse">
+    <path d="M 0 8 L 8 0 M -2 2 L 2 -2 M 6 10 L 10 6" class="stroke-thin" stroke-opacity="0.02" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#diagonal-stripe)" />
+
+</svg>

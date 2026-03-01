@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      
+      /* 离线状态：处于关闭/熟睡的静态状态 */
+    </style>
+  </defs>
+
+  <!-- 闭合的眼睑线 (Sleepy/Offline curve) -->
+  <path class="stroke-main" d="M 4 13 C 8 16, 16 16, 20 13" />
+  
+  <!-- 闭眼时的几根微小睫毛细节，暗示这是眼睛而不是嘴巴 -->
+  <path class="stroke-main" d="M 8 15 L 7 17" />
+  <path class="stroke-main" d="M 12 15.5 L 12 18" />
+  <path class="stroke-main" d="M 16 15 L 17 17" />
+  
+  <!-- Zzz 休眠符号标志 -->
+  <path class="stroke-main" stroke-width="1.5" d="M 16 5 L 20 5 L 16 9 L 20 9" opacity="0.6" />
+</svg>

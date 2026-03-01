@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      
+      /* 猫爪正在用力往四个角落拉扯屏幕（撑开全屏感觉） */
+      @keyframes expandPull {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(1px, -1px); }
+      }
+      
+      @keyframes expandPullBottom {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(-1px, 1px); }
+      }
+
+      .anim-pull-tr { animation: expandPull 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+      .anim-pull-bl { animation: expandPullBottom 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+    </style>
+  </defs>
+
+  <!-- 经典的四个角落外扩箭头，但这里将箭头柄用微微弯曲的弧度勾勒成猫爪抓痕 (Claw marks) -->
+  
+  <!-- 左上向左下弯曲 -->
+  <path class="stroke-main" d="M 8 4 L 4 4 L 4 8 C 5.5 6 6 5.5 8 4" />
+  
+  <!-- 右上：用猫爪抓着往右上角拉的动势 -->
+  <g class="anim-pull-tr">
+    <path class="stroke-main" d="M 16 4 L 20 4 L 20 8 C 18.5 6 18 5.5 16 4" />
+    <circle cx="20" cy="4" r="1.5" class="stroke-main" fill="var(--bg-color, #ffffff)" />
+  </g>
+
+  <!-- 右下 -->
+  <path class="stroke-main" d="M 20 16 L 20 20 L 16 20 C 18 18.5 18.5 18 20 16" />
+  
+  <!-- 左下：用猫爪抓着往左下角拉的动势 -->
+  <g class="anim-pull-bl">
+    <path class="stroke-main" d="M 4 16 L 4 20 L 8 20 C 6 18.5 5.5 18 4 16" />
+    <circle cx="4" cy="20" r="1.5" class="stroke-main" fill="var(--bg-color, #ffffff)" />
+  </g>
+
+</svg>

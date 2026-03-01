@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-icon { fill: currentColor; }
+
+      /* 猫耳微动效（继承规范） */
+      @keyframes earMew {
+        0%, 100% { transform: translateY(0); }
+        30% { transform: translateY(-1.5px); }
+        50% { transform: translateY(0); }
+        70% { transform: translateY(-1.5px); }
+      }
+
+      /* 节点呼吸灯微亮动效，暗示连接中的节点 */
+      @keyframes nodePulse {
+        0%, 100% { transform: scale(1); opacity: 0.7; }
+        50% { transform: scale(1.3); opacity: 1; }
+      }
+      
+      .ear-l { transform-origin: 3px 5px; animation: earMew 2s ease-out infinite; }
+      .ear-r { transform-origin: 21px 5px; animation: earMew 2s ease-out infinite 0.2s; }
+      
+      .pulse-node { transform-origin: 16px 16px; animation: nodePulse 2.5s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- 上方：两个带轻微折角的猫耳融入地球/网络拓扑（Topology）结构中 -->
+  <g class="ear-l">
+    <path class="stroke-icon" d="M 3 10 L 3 5 L 8 9" />
+  </g>
+  <g class="ear-r">
+    <path class="stroke-icon" d="M 21 10 L 21 5 L 16 9" />
+  </g>
+
+  <!-- 主体：一个全球/区域网络拓扑图 (Nodes) -> 暗示代理服务器节点 -->
+  <!-- 左上节点 -->
+  <circle cx="8" cy="9" r="2" class="stroke-icon" />
+  <!-- 左下节点 -->
+  <circle cx="6" cy="17" r="2" class="stroke-icon" />
+  <!-- 右下节点 (带呼吸信号，表示当前活跃节点) -->
+  <circle cx="16" cy="16" r="2" class="fill-icon pulse-node" />
+
+  <!-- 节点间的网络连接线 (Routing lines) -->
+  <path class="stroke-icon" d="M 7.3 11 L 6.5 15" /> <!-- 左上连左下 -->
+  <path class="stroke-icon" d="M 9.8 10 L 14.5 14.8" /> <!-- 左上连右下 -->
+  <path class="stroke-icon" d="M 8 18 C 12 19, 14 18, 15 17.5" /> <!-- 左下连右下 -->
+
+</svg>

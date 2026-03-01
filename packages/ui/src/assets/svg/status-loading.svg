@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      
+      /* 加载状态：猫尾巴在追逐自己（圆环转圈） */
+      @keyframes tailSpin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      .anim-tail {
+        transform-origin: 12px 12px;
+        animation: tailSpin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      }
+    </style>
+  </defs>
+
+  <g class="anim-tail">
+    <!-- 将猫尾巴抽象为带有渐粗/弯环的加载圈 -->
+    <!-- 尾巴主体圆弧 -->
+    <path class="stroke-main" d="M 12 4 A 8 8 0 1 1 4 12" />
+    <!-- 尾巴尖端卷起的毛茸茸部分 (Curled tip) -->
+    <path class="stroke-main" stroke-width="3" d="M 3.8 12 C 4 9 6 7 8 8.5 C 9.5 9.5 9 12 7 12 C 5.5 12 5.5 10.5 6 10" />
+  </g>
+</svg>

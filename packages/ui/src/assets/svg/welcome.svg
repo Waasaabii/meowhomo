@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <style>
+      .stroke-bold { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-thin { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .bg-fill { fill: var(--bg-color, #ffffff); }
+      .accent-fill { fill: currentColor; }
+      
+      /* 元气满满地从纸箱子里扑出来的弹跳动效 (Burst out from box) */
+      @keyframes burstOut {
+        0% { transform: translateY(40px) scale(0.6); opacity: 0; }
+        40% { transform: translateY(-10px) scale(1.05); opacity: 1; }
+        60% { transform: translateY(5px) scale(0.95); }
+        100% { transform: translateY(0) scale(1); opacity: 1; }
+      }
+      /* 充满活力的摇手打招呼 (Enthusiastic greeting wave) */
+      @keyframes greetWave {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(25deg); }
+        75% { transform: rotate(-10deg); }
+      }
+      /* 耳朵高高竖起高兴地前后扇动 (Happy ear flips) */
+      @keyframes happyEars {
+        0%, 100% { transform: rotate(0deg); }
+        20% { transform: rotate(10deg); }
+        40% { transform: rotate(-5deg); }
+      }
+      /* 欢迎的闪光/星星爆发 (Star pops) */
+      @keyframes popStars {
+        0%, 100% { transform: scale(0.5); opacity: 0; }
+        50% { transform: scale(1.2); opacity: 1; }
+        80% { transform: scale(1); opacity: 0.8; }
+      }
+
+      .anim-body { transform-origin: 128px 200px; animation: burstOut 1.2s cubic-bezier(0.17, 0.89, 0.32, 1.2); }
+      .anim-hand { transform-origin: 200px 100px; animation: greetWave 1s ease-in-out infinite; }
+      .anim-ear { transform-origin: 128px 80px; animation: happyEars 2s ease-in-out infinite; }
+      .anim-star-1 { transform-origin: 40px 60px; animation: popStars 2s ease-in-out infinite; }
+      .anim-star-2 { transform-origin: 220px 80px; animation: popStars 2s ease-in-out infinite 0.5s; }
+      .anim-star-3 { transform-origin: 60px 160px; animation: popStars 2s ease-in-out infinite 1s; }
+    </style>
+  </defs>
+
+  <!-- 散落的欢迎星星 (Sparkles of joy) -->
+  <g class="stroke-bold fill-main">
+    <path class="anim-star-1" d="M 40 40 L 45 55 L 60 60 L 45 65 L 40 80 L 35 65 L 20 60 L 35 55 Z" />
+    <path class="anim-star-2" d="M 220 60 L 223 72 L 235 75 L 223 78 L 220 90 L 217 78 L 205 75 L 217 72 Z" />
+    <path class="anim-star-3" d="M 60 140 L 62 148 L 70 150 L 62 152 L 60 160 L 58 152 L 50 150 L 58 148 Z" />
+  </g>
+
+  <!-- 地面上那个用来装猫/用来配送惊喜的拆开的瓦楞纸箱 (Opened Delivery Box) -->
+  <!-- 箱子后面的一半在最底层 -->
+  <path class="stroke-bold bg-fill" d="M 60 180 L 196 180 L 196 230 C 196 240, 186 250, 176 250 L 80 250 C 70 250, 60 240, 60 230 Z" />
+  <!-- 折开的后侧纸箱盖子 -->
+  <path class="stroke-thin" d="M 60 180 L 40 160 M 196 180 L 216 160" />
+
+  <g class="anim-body">
+    <!-- 从箱子里扑出来的猫娘身体 (Popping out) -->
+    <!-- 左手扶着箱边 -->
+    <path class="stroke-bold bg-fill" d="M 60 140 C 90 120, 100 130, 80 180" />
+    <ellipse cx="76" cy="180" rx="6" ry="10" class="stroke-bold bg-fill" transform="rotate(20 76 180)" />
+
+    <!-- 兴奋挥舞的右手 (Waving hand high) -->
+    <g class="anim-hand">
+      <path class="stroke-bold bg-fill" d="M 196 140 C 170 120, 150 130, 140 150" />
+      <g transform="translate(196, 120)">
+        <ellipse cx="0" cy="0" rx="12" ry="16" class="stroke-bold bg-fill" transform="rotate(-15)" />
+        <path class="stroke-thin" d="M -8 -8 L -4 0 M 0 -10 L 2 0 M 8 -8 L 6 0" /> <!-- 张开的脚趾 -->
+      </g>
+    </g>
+
+    <!-- 身体躯干 (露出大半截) -->
+    <path class="stroke-bold bg-fill" d="M 100 160 C 120 180, 140 180, 160 160" />
+    <path class="stroke-bold bg-fill" d="M 110 180 L 110 210 M 146 180 L 146 210" /> <!-- 水手服衣领 -->
+
+    <!-- 头与脸 (兴奋灿烂的大笑 =^w^=) -->
+    <g class="anim-ear">
+      <!-- 极度高耸竖立的开心猫耳 (Perked up ears) -->
+      <path class="stroke-bold bg-fill" d="M 110 80 L 80 10 L 140 60" />
+      <path class="stroke-bold bg-fill" d="M 156 80 L 186 10 L 136 60" />
+      <!-- 耳朵内毛茸茸的细节 -->
+      <path class="stroke-thin" d="M 96 40 L 110 60 M 170 40 L 156 60" />
+
+      <!-- 圆滚滚的开心包子大脸框 -->
+      <path class="stroke-bold bg-fill" d="M 128 160 C 176 160, 196 110, 196 80 C 196 40, 166 30, 128 30 C 90 30, 60 40, 60 80 C 60 110, 80 160, 128 160 Z" />
+      
+      <!-- 闪亮的闭眼大笑 (Happy tight smile > <) -->
+      <g class="stroke-bold" stroke-linecap="round">
+        <path d="M 80 80 Q 100 70 110 80" />
+        <path d="M 176 80 Q 156 70 146 80" />
+      </g>
+      
+      <!-- w 形超级开心的猫嘴 -->
+      <path class="stroke-bold" d="M 116 100 Q 128 130 140 100" /> <!-- 大笑长大的嘴 -->
+      <path d="M 116 100 Q 128 110 140 100" class="stroke-bold bg-fill" /> <!-- 舌头上方遮挡 -->
+      
+      <circle cx="90" cy="90" r="10" fill="currentColor" opacity="0.1" /> <!-- 兴奋的红晕 -->
+      <circle cx="166" cy="90" r="10" fill="currentColor" opacity="0.1" />
+    </g>
+  </g>
+
+  <!-- 箱子前面遮挡的一半 (Foreground of the box) -->
+  <path class="stroke-bold" d="M 60 180 L 196 180" />
+  <!-- 折开的前侧纸箱盖子悬垂下来 -->
+  <path class="stroke-thin bg-fill" d="M 60 180 L 70 230 L 186 230 L 196 180" opacity="0.9" />
+  <!-- 箱子上的猫猫物流胶带标志 (Delivery Tape Mark) -->
+  <path class="stroke-thin" d="M 100 200 L 156 200" stroke-dasharray="10 5" />
+
+</svg>

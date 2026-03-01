@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+      
+      /* 中心加号图标的欢快弹跳与变色 */
+      @keyframes popUp {
+        0%, 100% { transform: scale(1) translateY(0); }
+        50% { transform: scale(1.2) translateY(-3px); }
+      }
+      
+      /* 两侧猫爪像“端上大餐”一样往上托举加号 */
+      @keyframes pawServe {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-1px); }
+      }
+
+      .anim-plus { transform-origin: 12px 10px; animation: popUp 1.5s cubic-bezier(0.3, 0.8, 0.2, 1) infinite; }
+      .anim-paw-l { animation: pawServe 1.5s ease-in-out infinite; }
+      .anim-paw-r { animation: pawServe 1.5s ease-in-out infinite 0.1s; }
+    </style>
+  </defs>
+
+  <!-- 中间核心标识：一个饱满弹跳的巨大“+”号 (Plus sign) -->
+  <g class="anim-plus">
+    <path class="stroke-main" d="M 12 4 L 12 16" />
+    <path class="stroke-main" d="M 6 10 L 18 10" />
+  </g>
+
+  <!-- 底部两侧：两只小巧的猫爪正做着往上托举的姿势 (Serving / Offering shape) -->
+  <!-- 左边小爪子 -->
+  <g class="anim-paw-l">
+    <path class="stroke-main" d="M 8 20 C 6 20 4 19 4 17" />
+    <ellipse cx="6" cy="16" rx="1.5" ry="2" class="fill-main" transform="rotate(30 6 16)" />
+    <ellipse cx="9" cy="18" rx="1.5" ry="2" class="fill-main" transform="rotate(60 9 18)" />
+  </g>
+
+  <!-- 右边小爪子 -->
+  <g class="anim-paw-r">
+    <path class="stroke-main" d="M 16 20 C 18 20 20 19 20 17" />
+    <ellipse cx="18" cy="16" rx="1.5" ry="2" class="fill-main" transform="rotate(-30 18 16)" />
+    <ellipse cx="15" cy="18" rx="1.5" ry="2" class="fill-main" transform="rotate(-60 15 18)" />
+  </g>
+
+</svg>

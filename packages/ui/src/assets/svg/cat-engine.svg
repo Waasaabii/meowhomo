@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <style>
+      .stroke-bold { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-thin { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .bg-fill { fill: var(--bg-color, #ffffff); }
+      .accent-fill { fill: currentColor; }
+
+      /* 工作人员/机务人员敲击扳手的笃定动效 */
+      @keyframes fixTap {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(1.5px); }
+      }
+      /* 手里举着巨大扳手规律敲击 */
+      @keyframes wrenchPound {
+        0%, 100% { transform: rotate(0deg); }
+        30% { transform: rotate(-25deg); }
+        50% { transform: rotate(10deg); }
+        80% { transform: rotate(0deg); }
+      }
+
+      .anim-head { transform-origin: 24px 34px; animation: fixTap 1.5s ease-in-out infinite; }
+      .anim-wrench { transform-origin: 38px 36px; animation: wrenchPound 2.5s cubic-bezier(0.1, 0.9, 0.2, 1) infinite; }
+    </style>
+  </defs>
+
+  <!-- 上半身穿着带口袋的厚重背带裤/工装 (Overalls mechanic suit) -->
+  <path class="stroke-bold bg-fill" d="M 12 48 C 12 36, 36 36, 36 48" />
+  <path class="stroke-thin" d="M 16 38 L 16 48 M 32 38 L 32 48" />
+  <!-- 胸前的工装大口袋 -->
+  <rect x="20" y="42" width="8" height="6" rx="1" class="stroke-thin" />
+
+  <!-- 手握超大号修车工业扳手 (Wrench tool) -->
+  <g class="anim-wrench">
+    <path class="stroke-bold" d="M 38 36 L 46 20" />
+    <path class="stroke-bold bg-fill" d="M 46 21 C 42 18, 48 10, 52 14 C 55 18, 50 24, 46 21" />
+    <!-- 握住的右粗爪 -->
+    <ellipse cx="38" cy="36" rx="4" ry="4" class="stroke-bold bg-fill" />
+  </g>
+
+  <!-- 左爪擦汗/扶护目镜姿态 -->
+  <ellipse cx="14" cy="34" rx="3" ry="5" class="stroke-bold bg-fill" transform="rotate(45 14 34)" />
+
+  <!-- 头部主容器 -->
+  <g class="anim-head">
+    <!-- 包子脸框 -->
+    <path class="stroke-bold bg-fill" d="M 24 38 C 38 38, 40 26, 40 18 C 40 10, 34 6, 24 6 C 14 6, 8 10, 8 18 C 8 26, 10 38, 24 38 Z" />
+
+    <!-- 猫耳后压显示专注/下沉感 (Determined ears) -->
+    <path class="stroke-bold bg-fill" d="M 14 16 L 4 6 L 22 10" />
+    <path class="stroke-bold bg-fill" d="M 34 16 L 44 6 L 26 10" />
+
+    <!-- 头顶捆着用来防止头发挡脸的发带/护额 (Bandana) -->
+    <path class="stroke-thin bg-fill" d="M 8 18 C 14 14, 34 14, 40 18 C 34 12, 14 12, 8 18 Z" />
+
+    <!-- 戴着极客/工程师厚重的防护风镜/深框眼镜 (Goggles) -->
+    <g class="stroke-bold">
+      <!-- 左风镜框 -->
+      <path d="M 10 24 C 10 20, 20 20, 20 24 C 20 28, 10 28, 10 24 Z" class="bg-fill" />
+      <!-- 右风镜框 -->
+      <path d="M 28 24 C 28 20, 38 20, 38 24 C 38 28, 28 28, 28 24 Z" class="bg-fill" />
+      <!-- 连接带 -->
+      <line x1="20" y1="24" x2="28" y2="24" />
+    </g>
+    
+    <!-- 嘴里咬着一颗螺丝钉/起子柄 (Determined bite: -w-) -->
+    <path class="stroke-thin" d="M 20 32 L 24 30 L 28 32" />
+    <!-- 钉子从嘴角沿出 -->
+    <line x1="20" y1="32" x2="16" y2="34" class="stroke-thin" />
+  </g>
+</svg>

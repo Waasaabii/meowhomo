@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <style>
+      .paw-fill { fill: var(--favicon-color, currentColor); }
+    </style>
+  </defs>
+  
+  <!-- 将整个图案在 Y 轴整体往下移动 12px 进行像素级完美居中 -->
+  <!-- 主肉垫 -->
+  <path class="paw-fill" d="M 64 120 C 44 120 24 104 24 80 C 24 62 38 54 48 54 C 58 54 60 64 64 64 C 68 64 70 54 80 54 C 90 54 104 62 104 80 C 104 104 84 120 64 120 Z" />
+
+  <!-- 四个脚趾豆豆同源下移 12px -->
+  <ellipse cx="24" cy="50" rx="14" ry="20" class="paw-fill" transform="rotate(-30 24 50)" />
+  <ellipse cx="50" cy="28" rx="14" ry="20" class="paw-fill" transform="rotate(-10 50 28)" />
+  <ellipse cx="78" cy="28" rx="14" ry="20" class="paw-fill" transform="rotate(10 78 28)" />
+  <ellipse cx="104" cy="50" rx="14" ry="20" class="paw-fill" transform="rotate(30 104 50)" />
+</svg>

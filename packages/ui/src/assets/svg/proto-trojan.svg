@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+      
+      /* 护盾闪光（Shield glint），代表协议加密的安全性扫描 */
+      @keyframes shieldGlint {
+        0%, 80% { transform: translateX(-15px) rotate(45deg); opacity: 0; }
+        90% { transform: translateX(5px) rotate(45deg); opacity: 0.5; }
+        100% { transform: translateX(25px) rotate(45deg); opacity: 0; }
+      }
+      
+      /* 木马本身的微小呼吸，增加活物感 */
+      @keyframes trojanBreathe {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-0.5px); }
+      }
+
+      .glint { animation: shieldGlint 3s ease-in-out infinite; }
+      .anim-trojan { animation: trojanBreathe 2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- 所有协议统一的猫爪防爆盾底板 (Paw Shield Base) -->
+  <path class="stroke-main" d="M 12 2 L 4 5 L 4 10 C 4 15.5 7.5 20.5 12 22 C 16.5 20.5 20 15.5 20 10 L 20 5 Z" />
+  
+  <!-- 猫耳朵形态的盾牌上沿修饰 -->
+  <path class="stroke-main" d="M 7 5 L 7 2 L 10 3.5" />
+  <path class="stroke-main" d="M 17 5 L 17 2 L 14 3.5" />
+
+  <!-- 内部协议标志：特洛伊木马 (Trojan Horse) 简化版 -->
+  <g class="anim-trojan">
+    <!-- 马头与鬃毛 -->
+    <path class="stroke-main" d="M 9 15 L 9 8 L 14 8 L 16 11 L 16 15" stroke-width="1.5"/>
+    <path class="stroke-main" d="M 14 11 L 11 11 L 11 14" stroke-width="1.5"/>
+    <!-- 木马的独角/耳朵 -->
+    <path class="stroke-main" d="M 13 8 L 14 6" stroke-width="1.5"/>
+    <circle cx="14" cy="10" r="0.5" class="fill-main" />
+  </g>
+
+  <!-- 闪瞎狗眼的光棱安全扫描效果 -->
+  <clipPath id="shield-clip">
+    <path d="M 12 2 L 4 5 L 4 10 C 4 15.5 7.5 20.5 12 22 C 16.5 20.5 20 15.5 20 10 L 20 5 Z" />
+  </clipPath>
+  
+  <g clip-path="url(#shield-clip)">
+    <rect class="fill-main glint" width="4" height="30" x="10" y="-5" opacity="0.5" />
+  </g>
+
+</svg>

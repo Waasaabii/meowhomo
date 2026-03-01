@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="nav-icon">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+      
+      /* 从天而降掉落的鱼 */
+      @keyframes fishDrop {
+        0%, 10% { transform: translateY(-8px) rotate(-20deg); opacity: 0; }
+        40% { transform: translateY(2px) rotate(10deg); opacity: 1; }
+        60%, 100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      }
+      /* 下方猫爪托举预判及弹跳 */
+      @keyframes pawCatch {
+        0%, 100% { transform: translateY(2px) scaleY(0.9); }
+        40%, 60% { transform: translateY(0) scaleY(1.05); }
+      }
+
+      .nav-icon:hover .anim-fish { animation: fishDrop 0.8s ease-out; }
+      .nav-icon:hover .anim-paw { animation: pawCatch 0.8s ease-out; transform-origin: 12px 20px;}
+    </style>
+  </defs>
+  
+  <g class="anim-fish">
+    <!-- 下坠的小鱼 -->
+    <path class="stroke-main" fill="var(--bg-color, #ffffff)" d="M 14 6 C 14 6 10 4 8 8 C 6 12 14 14 14 14 C 14 14 16 10 14 6 Z" />
+    <path class="stroke-main" d="M 14 14 L 16 16 M 14 14 L 18 12" />
+    <circle cx="9.5" cy="8.5" r="0.5" class="fill-main" />
+  </g>
+
+  <g class="anim-paw">
+    <!-- 托举包裹的猫肚皮/双脚底板 -->
+    <path class="stroke-main" d="M 5 20 C 5 15 8 13 12 13 C 16 13 19 15 19 20" />
+    <!-- 两个前伸的张开肉垫作为手接着 -->
+    <ellipse cx="9" cy="16" rx="1.5" ry="2.5" class="fill-main" transform="rotate(20 9 16)" />
+    <ellipse cx="15" cy="16" rx="1.5" ry="2.5" class="fill-main" transform="rotate(-20 15 16)" />
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+      
+      /* Vmess 字母 V 的科技感载入渐现闪烁 */
+      @keyframes vBlink {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; text-shadow: 0 0 4px currentColor; }
+      }
+
+      /* 盾牌统一扫描闪光 */
+      @keyframes shieldGlint {
+        0%, 80% { transform: translateX(-15px) rotate(45deg); opacity: 0; }
+        90% { transform: translateX(5px) rotate(45deg); opacity: 0.5; }
+        100% { transform: translateX(25px) rotate(45deg); opacity: 0; }
+      }
+
+      .glint { animation: shieldGlint 3s ease-in-out infinite; }
+      .anim-v { animation: vBlink 2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- 家族底板：猫耳防爆盾 -->
+  <path class="stroke-main" d="M 12 2 L 4 5 L 4 10 C 4 15.5 7.5 20.5 12 22 C 16.5 20.5 20 15.5 20 10 L 20 5 Z" />
+  <path class="stroke-main" d="M 7 5 L 7 2 L 10 3.5" />
+  <path class="stroke-main" d="M 17 5 L 17 2 L 14 3.5" />
+
+  <!-- 内部协议标志：Vmess (充实的 V 字) -->
+  <g class="anim-v">
+    <path class="fill-main" d="M 8 7 L 11 7 L 13 14 L 15 7 L 18 7 L 14.5 17 L 11.5 17 Z" />
+  </g>
+
+  <!-- 光棱扫描遮罩层 -->
+  <clipPath id="shield-clip">
+    <path d="M 12 2 L 4 5 L 4 10 C 4 15.5 7.5 20.5 12 22 C 16.5 20.5 20 15.5 20 10 L 20 5 Z" />
+  </clipPath>
+  <g clip-path="url(#shield-clip)">
+    <rect class="fill-main glint" width="4" height="30" x="10" y="-5" opacity="0.5" />
+  </g>
+
+</svg>

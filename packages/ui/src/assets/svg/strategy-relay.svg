@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+
+      /* 接力/中转动效：两个节点/猫爪交替跳动传球 */
+      @keyframes relayHop {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+      
+      @keyframes ballPass {
+        0% { transform: translateX(0); opacity: 0; }
+        10% { transform: translateX(0); opacity: 1; }
+        90% { transform: translateX(8px); opacity: 1; }
+        100% { transform: translateX(8px); opacity: 0; }
+      }
+
+      .anim-hop-1 { animation: relayHop 1.2s ease-in-out infinite; transform-origin: 6px 16px; }
+      .anim-hop-2 { animation: relayHop 1.2s ease-in-out infinite 0.6s; transform-origin: 18px 16px; }
+      .anim-ball { animation: ballPass 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+    </style>
+  </defs>
+
+  <!-- 左侧接力起点 (Node 1) -->
+  <g class="anim-hop-1">
+    <path class="stroke-main" d="M 6 18 L 6 12 L 4 14" />
+    <path class="stroke-main" d="M 6 12 L 8 14" />
+    <circle cx="6" cy="10" r="1.5" class="fill-main" />
+  </g>
+
+  <!-- 右侧接力终点 (Node 2) -->
+  <g class="anim-hop-2">
+    <path class="stroke-main" d="M 18 18 L 18 12 L 16 14" />
+    <path class="stroke-main" d="M 18 12 L 20 14" />
+    <circle cx="18" cy="10" r="1.5" class="fill-main" />
+  </g>
+
+  <!-- 中间传递的数据包 (Data Ball) -->
+  <g class="anim-ball">
+    <circle cx="8" cy="14" r="1.5" class="stroke-main" stroke-dasharray="2 1" />
+    <!-- 传递路径的虚线残影 -->
+    <line x1="1" y1="14" x2="-3" y2="14" class="stroke-main" stroke-opacity="0.5" />
+  </g>
+
+  <!-- 底部连结的基建线 -->
+  <path class="stroke-main" stroke-dasharray="1 3" d="M 6 20 C 10 21, 14 21, 18 20" />
+
+</svg>

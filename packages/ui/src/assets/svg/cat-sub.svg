@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <style>
+      .stroke-bold { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-thin { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .bg-fill { fill: var(--bg-color, #ffffff); }
+      .accent-fill { fill: currentColor; }
+
+      /* 活泼喵娘出场：摇晃双手与兴奋抖耳 */
+      @keyframes excitedMew {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-8deg); }
+        75% { transform: rotate(8deg); }
+      }
+      @keyframes tailWag {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(25deg); }
+      }
+
+      .anim-head { transform-origin: 24px 34px; animation: excitedMew 2.5s ease-in-out infinite; }
+      .anim-tail { transform-origin: 24px 40px; animation: tailWag 1s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- 活动的尾巴 (在背景层) -->
+  <g class="anim-tail">
+    <path class="stroke-bold bg-fill" d="M 28 36 C 40 30, 48 40, 36 46" />
+    <!-- 尾巴纹理 -->
+    <path class="stroke-thin" d="M 38 35 L 42 38" />
+  </g>
+
+  <!-- 身体与双手 (抱着一条小咸鱼，代表订阅获取) -->
+  <path class="stroke-bold bg-fill" d="M 14 48 C 14 40, 34 40, 34 48" />
+  <g transform="translate(18, 38) rotate(-15)">
+    <!-- 小咸鱼 -->
+    <path class="stroke-thin bg-fill" d="M 0 4 C 4 0, 10 0, 14 4 C 10 8, 4 8, 0 4 Z" />
+    <path class="stroke-thin" d="M 12 2 L 16 0 L 16 8 Z" />
+    <circle cx="3" cy="4" r="0.5" class="accent-fill" />
+  </g>
+  <!-- 抱鱼的两只前爪 -->
+  <ellipse cx="20" cy="42" rx="3" ry="4" class="stroke-bold bg-fill" transform="rotate(-30 20 42)" />
+  <ellipse cx="28" cy="44" rx="3" ry="4" class="stroke-bold bg-fill" transform="rotate(30 28 44)" />
+
+  <!-- 头部主容器 -->
+  <g class="anim-head">
+    <!-- 后发/双马尾基部 -->
+    <path class="stroke-bold bg-fill" d="M 10 24 C 2 30, 6 42, 14 36" />
+    <path class="stroke-bold bg-fill" d="M 38 24 C 46 30, 42 42, 34 36" />
+
+    <!-- 左猫耳 -->
+    <path class="stroke-bold bg-fill" d="M 16 16 L 8 4 L 22 10" />
+    <path class="stroke-thin" d="M 14 12 L 10 6 L 18 10" />
+    <!-- 右猫耳 -->
+    <path class="stroke-bold bg-fill" d="M 32 16 L 40 4 L 26 10" />
+    <path class="stroke-thin" d="M 34 12 L 38 6 L 30 10" />
+
+    <!-- 圆润的包子脸框 -->
+    <path class="stroke-bold bg-fill" d="M 24 36 C 38 36, 40 24, 40 18 C 40 10, 34 6, 24 6 C 14 6, 8 10, 8 18 C 8 24, 10 36, 24 36 Z" />
+
+    <!-- 萌萌的齐刘海 -->
+    <path class="stroke-thin bg-fill" d="M 8 18 C 14 10, 34 10, 40 18 C 34 14, 28 16, 24 16 C 20 16, 14 14, 8 18 Z" />
+    <!-- 侧边鬓角 -->
+    <path class="stroke-thin bg-fill" d="M 8 18 C 10 24, 12 28, 14 26 C 12 22, 10 18, 8 18 Z" />
+    <path class="stroke-thin bg-fill" d="M 40 18 C 38 24, 36 28, 34 26 C 36 22, 38 18, 40 18 Z" />
+
+    <!-- 活泼的星星眼与表情 -->
+    <g class="stroke-bold">
+      <!-- 左眼（眨眼/笑眼 ^） -->
+      <path d="M 14 24 Q 18 20 22 24" />
+      <!-- 右眼（圆星星眼） -->
+      <ellipse cx="32" cy="22" rx="3" ry="5" class="stroke-thin" />
+      <path class="stroke-thin" d="M 30 22 L 34 22 M 32 20 L 32 24" />
+    </g>
+    
+    <!-- 经典的猫嘴大笑 :D -->
+    <path class="stroke-thin" d="M 22 28 Q 24 30 26 28 L 26 30 Q 24 32 22 30 Z" />
+    
+    <!-- 脸颊红晕 -->
+    <path class="stroke-thin" d="M 12 28 L 16 26" stroke-opacity="0.5" />
+    <path class="stroke-thin" d="M 32 28 L 36 26" stroke-opacity="0.5" />
+  </g>
+</svg>

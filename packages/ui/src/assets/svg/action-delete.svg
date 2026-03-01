@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="nav-icon">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+      
+      /* 猫爪用力一推 (Cat pushing) */
+      @keyframes pawPush {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(2px) translateY(1px); }
+      }
+      
+      /* 垃圾桶被推翻的掉落动效 (Trash fall over) */
+      @keyframes trashFall {
+        0% { transform: rotate(0deg); }
+        30% { transform: rotate(20deg); }
+        70% { transform: rotate(40deg); }
+        100% { transform: rotate(0deg); } /* 为了循环所以恢复，如果是真实交互可以停留在倾倒状态 */
+      }
+
+      .nav-icon:hover .anim-push { transform-origin: 5px 12px; animation: pawPush 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+      .nav-icon:hover .anim-trash { transform-origin: 18px 20px; animation: trashFall 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+  </defs>
+
+  <!-- 左侧：猫爪准备推开 (Cat paw extending to push) -->
+  <g class="anim-push">
+    <path class="fill-main" d="M 2 13 C 4 13 4 11 6 11 C 7 11 8 13 9 14 C 8 16 6 17 4 16 C 3 15 2 15 2 13 Z" />
+    <circle cx="9" cy="11.5" r="1.5" class="fill-main" />
+    <circle cx="9.5" cy="14" r="1.5" class="fill-main" />
+  </g>
+
+  <!-- 右侧：垃圾桶本体 (Trash Can) -->
+  <g class="anim-trash">
+    <path class="stroke-main" d="M 11 7 L 21 7" />
+    <path class="stroke-main" d="M 14 7 L 14 5 C 14 4 15 4 16 4 C 17 4 18 4 18 5 L 18 7" />
+    <path class="stroke-main" d="M 12 7 L 13 19 C 13 20 14 21 16 21 C 18 21 19 20 19 19 L 20 7" />
+    <!-- 内部的条纹 -->
+    <path class="stroke-main" d="M 15 10 L 15.5 17" />
+    <path class="stroke-main" d="M 17 10 L 16.5 17" />
+  </g>
+
+</svg>

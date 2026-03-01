@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-icon { fill: currentColor; }
+
+      /* 只有两个小猫耳的轻轻抖动，不过分夸张 */
+      @keyframes earMew {
+        0%, 100% { transform: translateY(0); }
+        30% { transform: translateY(-1.5px); }
+        50% { transform: translateY(0); }
+        70% { transform: translateY(-1.5px); }
+      }
+      
+      .ear-l { transform-origin: 6px 3px; animation: earMew 2s ease-out infinite; }
+      .ear-r { transform-origin: 18px 3px; animation: earMew 2s ease-out infinite 0.2s; }
+    </style>
+  </defs>
+
+  <!-- 顶部：两个融入仪表盘上边缘的小猫耳 (极简几何) -->
+  <g class="ear-l">
+    <path class="stroke-icon" d="M 4 8 L 4 3 L 8 8" />
+  </g>
+  <g class="ear-r">
+    <path class="stroke-icon" d="M 20 8 L 20 3 L 16 8" />
+  </g>
+
+  <!-- 将仪表盘的主体设计为带圆角的大屏幕/监控板 -->
+  <path class="stroke-icon" d="M 2 8 C 2 6, 2 6, 4 6 L 20 6 C 22 6, 22 6, 22 8 L 22 18 C 22 20, 22 20, 20 20 L 4 20 C 2 20, 2 20, 2 18 Z" />
+
+  <!-- 内部的大折线数据图 -->
+  <path class="stroke-icon" d="M 6 16 L 10 11 L 14 13 L 18 8" />
+
+  <!-- 左下角的数据点强调 -->
+  <circle cx="6" cy="16" r="1.5" class="fill-icon" />
+  <circle cx="18" cy="8" r="1.5" class="fill-icon" />
+
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <style>
+      .stroke-bold { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-thin { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .bg-fill { fill: var(--bg-color, #ffffff); }
+      .accent-fill { fill: currentColor; }
+      
+      /* 耳朵极度耷拉的丧气感 */
+      @keyframes sadEarDrop {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-8deg); }
+      }
+      /* 肚子饿/叹气导致身体微弱起伏 */
+      @keyframes sighBody {
+        0%, 100% { transform: translateY(0) scaleY(1); }
+        50% { transform: translateY(2px) scaleY(0.95); }
+      }
+      /* 尾巴极其缓慢的、无精打采的拍打地板 */
+      @keyframes sadTail {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-15deg); }
+      }
+      
+      .anim-body { transform-origin: 128px 230px; animation: sighBody 3s ease-in-out infinite; }
+      .anim-tail { transform-origin: 160px 220px; animation: sadTail 4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+      .anim-ear-l { transform-origin: 100px 100px; animation: sadEarDrop 3s ease-in-out infinite; }
+      .anim-ear-r { transform-origin: 156px 100px; animation: sadEarDrop 3s ease-in-out infinite 0.5s; }
+    </style>
+  </defs>
+
+  <!-- 背景：空掉的巨大猫粮碗 (Empty Cat Bowl) -->
+  <path class="stroke-bold" d="M 64 240 L 192 240 C 200 240, 208 230, 200 220 C 195 210, 180 200, 128 200 C 76 200, 61 210, 56 220 C 48 230, 56 240, 64 240 Z" fill="var(--bowl-color, rgba(100,100,100,0.1))" />
+  <ellipse cx="128" cy="200" rx="60" ry="12" class="stroke-bold bg-fill" /> <!-- 碗口 -->
+  <!-- 碗边的一小滴汗/泪 (Tear drop of hunger) -->
+  <path class="stroke-thin" d="M 170 216 C 170 212, 173 208, 172 205 C 175 208, 174 212, 174 216 C 174 218, 172 220, 170 216 Z" />
+
+  <!-- 身体层 (趴在碗边上) -->
+  <g class="anim-body">
+    <!-- 下垂在碗两侧的无力双臂 -->
+    <path class="stroke-bold bg-fill" d="M 100 160 C 90 190, 80 210, 88 220 C 92 225, 100 220, 100 210 Z" />
+    <path class="stroke-bold bg-fill" d="M 156 160 C 166 190, 176 210, 168 220 C 164 225, 156 220, 156 210 Z" />
+    
+    <!-- 头部和下巴架在碗边缘上 -->
+    <!-- 下垂的绝望双折耳 (Sad Folded Ears) -->
+    <g class="anim-ear-l">
+      <path class="stroke-bold bg-fill" d="M 100 90 C 80 80, 50 110, 60 130 C 70 140, 90 130, 100 120" />
+    </g>
+    <g class="anim-ear-r">
+      <path class="stroke-bold bg-fill" d="M 156 90 C 176 80, 206 110, 196 130 C 186 140, 166 130, 156 120" />
+    </g>
+    
+    <!-- 被挤扁在碗上的大包子脸框 (Squished face on bowl edge) -->
+    <path class="stroke-bold bg-fill" d="M 128 178 C 80 178, 64 146, 64 116 C 64 80, 96 60, 128 60 C 160 60, 192 80, 192 116 C 192 146, 176 178, 128 178 Z" />
+
+    <!-- 凌乱干瘪的刘海 -->
+    <path class="stroke-thin bg-fill" d="M 64 116 C 80 96, 176 96, 192 116 C 176 100, 80 100, 64 116 Z" />
+
+    <!-- 放空、呆滞的无神半睁眼 (Dead eyes) -->
+    <!-- 眼眶 -->
+    <path class="stroke-bold" d="M 90 130 C 100 120, 110 120, 115 130" />
+    <path class="stroke-bold" d="M 166 130 C 156 120, 146 120, 141 130" />
+    <!-- 灰暗缩小的瞳孔孔 (Small pupils, no highlight) -->
+    <circle cx="102" cy="130" r="3" fill="currentColor" opacity="0.5" />
+    <circle cx="154" cy="130" r="3" fill="currentColor" opacity="0.5" />
+
+    <!-- 委屈可怜的波浪线猫嘴 (Wobbly sad mouth) -->
+    <path class="stroke-thin" d="M 120 152 Q 124 148 128 152 Q 132 148 136 152" />
+    
+    <!-- 灵魂出窍的幽灵吐息 (Soul leaving body) -->
+    <path class="stroke-thin" stroke-dasharray="4 4" d="M 128 140 C 120 120, 140 100, 128 80 C 120 60, 130 40, 128 20" opacity="0.5" />
+    <!-- 幽灵符号小尖角 -->
+    <path class="stroke-thin" d="M 124 24 L 128 18 L 132 24 Z" opacity="0.5" />
+  </g>
+
+  <!-- 虽然身体不能动，但是尾巴在身后有一搭没一搭地绝望扫着地板 -->
+  <g class="anim-tail">
+    <path class="stroke-bold bg-fill" d="M 160 210 C 220 200, 240 240, 210 236 C 190 230, 170 230, 160 210 Z" style="z-index: -1" />
+  </g>
+
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <style>
+      .stroke-bold { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-thin { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .bg-fill { fill: var(--bg-color, #ffffff); }
+      .accent-fill { fill: currentColor; }
+
+      /* 严肃认真地指路/点头动作 */
+      @keyframes seriousNod {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(2px); }
+      }
+      /* 手里举着的巡逻指挥棒微动 */
+      @keyframes batonWag {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-10deg); }
+      }
+
+      .anim-head { transform-origin: 24px 34px; animation: seriousNod 2s ease-in-out infinite; }
+      .anim-baton { transform-origin: 16px 42px; animation: batonWag 1.5s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- 上半身制服 (严肃紧身的军官服/警察制服) -->
+  <path class="stroke-bold bg-fill" d="M 16 48 C 16 42, 32 42, 32 48" />
+  <!-- 制服领结 -->
+  <path class="stroke-thin" d="M 24 44 L 20 46 Q 24 48 28 46 Z" />
+  
+  <!-- 手里举着交叉点指示棒 -->
+  <g class="anim-baton">
+    <!-- 握着指挥棒的爪子 -->
+    <ellipse cx="16" cy="42" rx="3.5" ry="4.5" class="stroke-bold bg-fill" />
+    <path class="stroke-bold bg-fill" d="M 16 42 L 8 28 L 6 32 Z" />
+    <!-- 手带白手套细节 -->
+    <path class="stroke-thin" d="M 14 42 L 18 42" />
+  </g>
+
+  <!-- 头部主容器 -->
+  <g class="anim-head">
+    <!-- 包子脸框 -->
+    <path class="stroke-bold bg-fill" d="M 24 38 C 38 38, 40 26, 40 20 C 40 12, 34 8, 24 8 C 14 8, 8 12, 8 20 C 8 26, 10 38, 24 38 Z" />
+
+    <!-- 戴着巡逻警帽 (Patrol Hat) -->
+    <!-- 帽檐遮住耳朵底部 -->
+    <path class="stroke-bold bg-fill" d="M 6 16 C 12 10, 36 10, 42 16" />
+    <path class="stroke-thin bg-fill" d="M 8 15 C 16 6, 32 6, 40 15 Z" />
+    <!-- 帽子上的小五角星 -->
+    <g transform="translate(24, 11) scale(0.6)">
+      <path class="stroke-thin" d="M 0 -4 L 1 -1 L 4 -1 L 2 1 L 3 4 L 0 2 L -3 4 L -2 1 L -4 -1 L -1 -1 Z" />
+    </g>
+
+    <!-- 严肃不苟言笑的面瘫表情 -->
+    <g class="stroke-bold">
+      <!-- 犀利的半垂眼 -->
+      <path d="M 12 24 L 18 25" />
+      <path class="stroke-thin" d="M 15 25 L 15 28" />
+      <path d="M 36 24 L 30 25" />
+      <path class="stroke-thin" d="M 33 25 L 33 28" />
+    </g>
+    
+    <!-- 微微撇着的猫嘴 `^` (不高兴/严肃) -->
+    <path class="stroke-thin" d="M 22 32 C 22 30, 24 30, 24 32 C 24 30, 26 30, 26 32" />
+
+    <!-- 眼镜反光效果 (聪明冷酷) -->
+    <g class="stroke-thin" stroke-opacity="0.8">
+      <rect x="11" y="21" width="10" height="8" rx="2" />
+      <rect x="27" y="21" width="10" height="8" rx="2" />
+      <line x1="21" y1="24" x2="27" y2="24" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+      
+      /* Socks 袜子的左中右轻微踢腿摇摆 */
+      @keyframes sockSwing {
+        0%, 100% { transform: rotate(0deg); }
+        33% { transform: rotate(-8deg); }
+        66% { transform: rotate(5deg); }
+      }
+
+      /* 盾牌统一扫描闪光 */
+      @keyframes shieldGlint {
+        0%, 80% { transform: translateX(-15px) rotate(45deg); opacity: 0; }
+        90% { transform: translateX(5px) rotate(45deg); opacity: 0.5; }
+        100% { transform: translateX(25px) rotate(45deg); opacity: 0; }
+      }
+
+      .glint { animation: shieldGlint 3s ease-in-out infinite; }
+      .anim-sock { transform-origin: 14px 8px; animation: sockSwing 1.5s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- 家族底板：猫耳防爆盾 -->
+  <path class="stroke-main" d="M 12 2 L 4 5 L 4 10 C 4 15.5 7.5 20.5 12 22 C 16.5 20.5 20 15.5 20 10 L 20 5 Z" />
+  <path class="stroke-main" d="M 7 5 L 7 2 L 10 3.5" />
+  <path class="stroke-main" d="M 17 5 L 17 2 L 14 3.5" />
+
+  <!-- 内部协议标志：Socks5 (挂在壁炉前或者晃动的圣诞猫爪毛线袜) -->
+  <g class="anim-sock">
+    <!-- 袜筒 -->
+    <path class="stroke-main" d="M 14 8 L 14 13" />
+    <path class="stroke-main" d="M 10 8 L 10 14" />
+    <!-- 袜口翻边 -->
+    <rect x="9" y="6" width="6" height="2" rx="1" class="stroke-main" />
+    <!-- 袜底连贯弧度和鞋头 -->
+    <path class="stroke-main" d="M 10 14 C 10 16.5 11 17 12 17 C 14 17 16 16 16 14 C 16 13 14 13 14 13" />
+    <!-- 袜子上的条纹装饰 (Stripes) -->
+    <line x1="10.5" y1="10" x2="13.5" y2="10" class="stroke-main" stroke-width="1.5" />
+    <line x1="10.5" y1="12" x2="13.5" y2="12" class="stroke-main" stroke-width="1.5" />
+  </g>
+
+  <!-- 光棱扫描遮罩层 -->
+  <clipPath id="shield-clip">
+    <path d="M 12 2 L 4 5 L 4 10 C 4 15.5 7.5 20.5 12 22 C 16.5 20.5 20 15.5 20 10 L 20 5 Z" />
+  </clipPath>
+  <g clip-path="url(#shield-clip)">
+    <rect class="fill-main glint" width="4" height="30" x="10" y="-5" opacity="0.5" />
+  </g>
+
+</svg>

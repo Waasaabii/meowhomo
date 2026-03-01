@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="nav-icon">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+      
+      /* 垂钓上钩拉扯的晃动 (Tug fishing rod) */
+      @keyframes rodTug {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(15deg) translateX(-1px); }
+      }
+      .nav-icon:hover .anim-rod { transform-origin: 6px 18px; animation: rodTug 0.6s ease-in-out infinite; }
+    </style>
+  </defs>
+  
+  <!-- 岸边的猫猫钓鱼者 (Fishing profile) -->
+  <path class="stroke-main" fill="var(--bg-color, #ffffff)" d="M 4 21 C 4 16 6 12 10 12 C 12 12 14 13 15 15" />
+  <path class="stroke-main" d="M 4 16 L 2 12 L 8 14" /> <!-- 竖起的猫耳朵 -->
+  <circle cx="8" cy="16" r="1.5" class="fill-main" /> <!-- 专注的圆眼睛 -->
+
+  <g class="anim-rod">
+    <!-- 手里那根长长的钓鱼竿 (Fishing pole) -->
+    <path class="stroke-main" d="M 6 18 L 18 6" />
+    
+    <!-- 抛下水的钓鱼线 (Line) -->
+    <path class="stroke-main" d="M 18 6 L 18 16" stroke-dasharray="2 2" />
+    
+    <!-- 鱼钩 (Hook) 与上面的活鱼 (Fish nibbling) -->
+    <path class="stroke-main" d="M 18 16 C 18 18 20 18 20 16" />
+    <path class="fill-main" d="M 19 18 L 22 17 L 20 20 Z" />
+  </g>
+</svg>

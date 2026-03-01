@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <style>
+      .stroke-bold { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-thin { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .bg-fill { fill: var(--bg-color, #ffffff); }
+      .accent-fill { fill: currentColor; }
+
+      /* 慌张手忙脚乱的动作：手里挥舞网线 */
+      @keyframes panicWiggle {
+        0%, 100% { transform: translateY(0); }
+        25% { transform: translateY(-2px) translateX(1px); }
+        75% { transform: translateY(2px) translateX(-1px); }
+      }
+      /* 网线插头的螺旋式甩动 */
+      @keyframes cableSwing {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(35deg); }
+      }
+      /* 慌张汗滴下落 */
+      @keyframes sweatDrop {
+        0% { transform: translateY(0); opacity: 0; }
+        30% { transform: translateY(2px); opacity: 1; }
+        100% { transform: translateY(8px); opacity: 0; }
+      }
+
+      .anim-head { transform-origin: 24px 34px; animation: panicWiggle 0.4s ease-in-out infinite; }
+      .anim-cable { transform-origin: 36px 40px; animation: cableSwing 0.6s ease-in-out infinite; }
+      .anim-sweat { animation: sweatDrop 1.5s ease-in cubic-bezier(0.4, 0, 1, 1) infinite; }
+    </style>
+  </defs>
+
+  <!-- 身体与双手 (慌张挥舞) -->
+  <path class="stroke-bold bg-fill" d="M 12 48 C 12 38, 36 38, 36 48" />
+
+  <!-- 手握着混乱的网线/光缆 (Ethernet Cable) -->
+  <g class="anim-cable">
+    <!-- 握住的右爪 -->
+    <ellipse cx="36" cy="40" rx="3" ry="5" class="stroke-bold bg-fill" transform="rotate(-20 36 40)" />
+    <!-- 甩动的 RJ45水晶头与线缆 -->
+    <path class="stroke-bold" d="M 36 40 C 44 36, 46 20, 36 16" />
+    <path class="stroke-bold bg-fill" d="M 32 16 L 38 18 L 36 12 Z" />
+  </g>
+
+  <!-- 另外一只要来抓头发的左爪 (慌乱) -->
+  <ellipse cx="12" cy="38" rx="3" ry="5" class="stroke-bold bg-fill" transform="rotate(20 12 38)" />
+
+  <!-- 头部主容器 -->
+  <g class="anim-head">
+    <!-- 乱蓬蓬的炸毛底发 (Messy Hair) -->
+    <path class="stroke-bold bg-fill" d="M 6 36 L 10 24 L 2 30 Z" />
+    <path class="stroke-bold bg-fill" d="M 42 36 L 38 24 L 46 30 Z" />
+
+    <!-- 慌张倒伏的猫耳 (Airplane ears / flat ears) -->
+    <path class="stroke-bold bg-fill" d="M 14 18 L 4 14 L 18 20" />
+    <path class="stroke-bold bg-fill" d="M 34 18 L 44 14 L 30 20" />
+
+    <!-- 包子脸框 -->
+    <path class="stroke-bold bg-fill" d="M 24 38 C 38 38, 40 26, 40 20 C 40 12, 34 8, 24 8 C 14 8, 8 12, 8 20 C 8 26, 10 38, 24 38 Z" />
+
+    <!-- 夸张的蚊香眼/漩涡眼 (Dizzy eyes @@) -->
+    <g class="stroke-thin">
+      <path d="M 12 24 C 14 20, 18 20, 20 24 C 22 28, 16 30, 14 26 C 12 22, 16 18, 20 20" />
+      <path d="M 36 24 C 34 20, 30 20, 28 24 C 26 28, 32 30, 34 26 C 36 22, 32 18, 28 20" />
+    </g>
+    
+    <!-- 惊慌失措大叫的曲折猫嘴 -->
+    <path class="stroke-thin" d="M 20 32 L 22 30 L 24 32 L 26 30 L 28 32 C 28 34, 20 34, 20 32 Z" />
+
+    <!-- 额头滴下的巨大冷汗 (Sweat drop) -->
+    <g class="anim-sweat">
+      <path class="stroke-thin" d="M 38 12 C 40 18, 36 18, 38 12" />
+      <circle cx="38" cy="18" r="1.5" class="bg-fill stroke-thin" />
+    </g>
+  </g>
+</svg>

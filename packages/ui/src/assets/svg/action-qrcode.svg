@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+
+      /* QR 码边缘的霓虹灯扫描光晕渐现 */
+      @keyframes qrScan {
+        0%, 100% { opacity: 0.3; transform: scale(0.95); }
+        50% { opacity: 1; transform: scale(1.05); }
+      }
+
+      /* 右下角的猫爪将二维码牌子举起展示 */
+      @keyframes pawLift {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-1.5px); }
+      }
+
+      .anim-qr { transform-origin: 10px 10px; animation: qrScan 2s ease-in-out infinite; }
+      .anim-paw { animation: pawLift 2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <g class="anim-qr">
+    <!-- QR 码标准的定位四边形框 (3 corners) -->
+    <!-- 左上 -->
+    <rect class="stroke-main" x="3" y="3" width="5" height="5" rx="1" />
+    <!-- 右上 -->
+    <rect class="stroke-main" x="13" y="3" width="5" height="5" rx="1" />
+    <!-- 左下 -->
+    <rect class="stroke-main" x="3" y="13" width="5" height="5" rx="1" />
+    
+    <!-- 中间的数据点阵乱码块 (Data blocks) -->
+    <rect class="fill-main" x="10" y="4" width="2" height="2" />
+    <rect class="fill-main" x="4" y="10" width="2" height="2" />
+    <rect class="fill-main" x="8" y="8" width="4" height="4" rx="0.5" />
+    <rect class="fill-main" x="14" y="10" width="2" height="2" />
+    <rect class="fill-main" x="10" y="15" width="2" height="2" />
+  </g>
+
+  <!-- 右下方：小猫爪从底部出现，仿佛正举起这个二维码牌子 (Lifting up) -->
+  <g class="anim-paw">
+    <path class="fill-main" d="M 15 22 C 13 22 13 20 14 18 C 13 16 15 15 17 15 C 19 15 21 16 20 18 C 21 20 21 22 19 22 Z" />
+    <!-- 两个手指抓握的动作 -->
+    <circle cx="15.5" cy="14" r="1.5" class="fill-main" />
+    <circle cx="18.5" cy="14" r="1.5" class="fill-main" />
+  </g>
+
+</svg>

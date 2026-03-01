@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+
+      /* 错误状态：极度惊恐/报错的猫眼，瞳孔缩小且剧烈抖动 */
+      @keyframes panicShake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-1.5px); }
+        75% { transform: translateX(1.5px); }
+      }
+
+      .anim-panic {
+        transform-origin: 12px 12px;
+        animation: panicShake 0.15s infinite; /* 高频抖动 */
+      }
+    </style>
+  </defs>
+
+  <!-- 惊恐瞪圆的眼眶 (Wide shocked eye) -->
+  <circle cx="12" cy="12" r="8" class="stroke-main" />
+  
+  <g class="anim-panic">
+    <!-- 极度缩小的针尖状瞳孔 (Slit pupil) -->
+    <ellipse cx="12" cy="12" rx="1" ry="6" class="fill-main" />
+  </g>
+
+</svg>

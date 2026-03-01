@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      
+      /* 猫爪重重往下压扁元素的动效 */
+      @keyframes pawSquash {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(3px); }
+      }
+      
+      /* 下方的两条折线被压扁 (Collapse) */
+      @keyframes lineSquash-1 {
+        0%, 100% { transform: translateY(0) scaleY(1); }
+        50% { transform: translateY(1.5px) scaleY(0.7); }
+      }
+      @keyframes lineSquash-2 {
+        0%, 100% { transform: translateY(0) scaleY(1); }
+        50% { transform: translateY(3px) scaleY(0.4); }
+      }
+
+      .anim-paw { transform-origin: 12px 14px; animation: pawSquash 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+      .anim-line-1 { transform-origin: 12px 12px; animation: lineSquash-1 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+      .anim-line-2 { transform-origin: 12px 18px; animation: lineSquash-2 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+    </style>
+  </defs>
+
+  <!-- 顶部的主观视角猫爪 (往下拍/压的姿态) -->
+  <g class="anim-paw">
+    <path class="stroke-main" d="M 8 4 C 8 8 10 10 12 10 C 14 10 16 8 16 4" fill="var(--bg-color, #ffffff)" />
+    <!-- 两个往下压的猫脚趾 -->
+    <path class="stroke-main" d="M 12 10 L 12 8" />
+    <path class="stroke-main" d="M 10 10 L 10 8" />
+    <path class="stroke-main" d="M 14 10 L 14 8" />
+  </g>
+
+  <!-- 下方代表内容/列表的折叠指示线 -->
+  <g class="anim-line-1">
+    <path class="stroke-main" d="M 5 13 L 12 16 L 19 13" />
+  </g>
+  <g class="anim-line-2">
+    <path class="stroke-main" d="M 5 18 L 12 21 L 19 18" />
+  </g>
+
+</svg>

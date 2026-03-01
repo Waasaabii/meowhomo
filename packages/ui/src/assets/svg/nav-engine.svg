@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-icon { fill: currentColor; }
+
+      /* 猫耳微动效（保持一致的萌属性节律） */
+      @keyframes earMew {
+        0%, 100% { transform: translateY(0); }
+        30% { transform: translateY(-1.5px); }
+        50% { transform: translateY(0); }
+        70% { transform: translateY(-1.5px); }
+      }
+
+      /* 内核齿轮（Engine Gear）的硬核金属旋转动效，暗示底层一直在计算运载 */
+      @keyframes coreRotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .ear-l { transform-origin: 5px 3px; animation: earMew 2s ease-out infinite; }
+      .ear-r { transform-origin: 19px 3px; animation: earMew 2s ease-out infinite 0.2s; }
+      
+      .engine-core { transform-origin: 12px 14px; animation: coreRotate 8s linear infinite; }
+    </style>
+  </defs>
+
+  <!-- 上方：无缝融合的小猫耳结构 -->
+  <g class="ear-l">
+    <path class="stroke-icon" d="M 5 7 L 5 2 L 9 7" />
+  </g>
+  <g class="ear-r">
+    <path class="stroke-icon" d="M 19 7 L 19 2 L 15 7" />
+  </g>
+
+  <!-- 齿轮主体（代表 Clash Engine 内核 / 核心系统） -->
+  <g class="engine-core">
+    <!-- 内部的传动轴心 / 光孔 -->
+    <circle cx="12" cy="14" r="3" class="stroke-icon" />
+
+    <!-- 外部八角齿轮轮廓，精简为四个主齿表示轻量化内核 -->
+    <path class="stroke-icon" d="M 12 8 C 12 8 13 8 13.5 9.5 L 14.5 9.5 C 15 8 16 8 16 8" transform="rotate(0 12 14)" />
+    <path class="stroke-icon" d="M 12 8 C 12 8 13 8 13.5 9.5 L 14.5 9.5 C 15 8 16 8 16 8" transform="rotate(90 12 14)" />
+    <path class="stroke-icon" d="M 12 8 C 12 8 13 8 13.5 9.5 L 14.5 9.5 C 15 8 16 8 16 8" transform="rotate(180 12 14)" />
+    <path class="stroke-icon" d="M 12 8 C 12 8 13 8 13.5 9.5 L 14.5 9.5 C 15 8 16 8 16 8" transform="rotate(270 12 14)" />
+
+    <!-- 环绕齿轮的承载轨道（表示隔离环境/沙盒） -->
+    <circle cx="12" cy="14" r="6" class="stroke-icon" stroke-dasharray="1.5 4" />
+  </g>
+
+</svg>

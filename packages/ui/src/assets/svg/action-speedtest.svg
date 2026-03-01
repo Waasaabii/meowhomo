@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+
+      /* 猫爪按压测速按钮（仪表盘）的反馈 */
+      @keyframes pawPress {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(2px) scaleY(0.9); }
+      }
+
+      /* 测速指针受力弹射反转，由于是静态/hover激活，所以保留快速抽动 */
+      @keyframes needleFlick {
+        0%, 100% { transform: rotate(-45deg); }
+        30% { transform: rotate(45deg); }
+        60% { transform: rotate(15deg); }
+        90% { transform: rotate(50deg); }
+      }
+
+      .anim-paw { transform-origin: 18px 18px; animation: pawPress 1s ease-in-out infinite; }
+      .anim-needle { transform-origin: 10px 14px; animation: needleFlick 2s cubic-bezier(0.1, 0.9, 0.2, 1) infinite; }
+    </style>
+  </defs>
+
+  <!-- 测速仪表盘基座，向左下方倾斜放置以留出猫爪空间 -->
+  <!-- 仪表盘外壳半圆 -->
+  <path class="stroke-main" d="M 4 14 A 6 6 0 1 1 16 14" />
+  <!-- 底盖 -->
+  <path class="stroke-main" d="M 3 14 L 17 14" />
+  
+  <!-- 测速指针 (Needle) -->
+  <g class="anim-needle">
+    <path class="stroke-main" stroke-width="1.5" d="M 10 14 L 10 9" />
+    <circle cx="10" cy="14" r="1.5" class="fill-main" />
+  </g>
+
+  <!-- 仪表盘刻度指示点 (Scale marks) -->
+  <circle cx="6" cy="11.5" r="0.5" class="fill-main" />
+  <circle cx="10" cy="9.5" r="0.5" class="fill-main" />
+  <circle cx="14" cy="11.5" r="0.5" class="fill-main" />
+
+  <!-- 主观视角的猫抓/猫球 (Paw pressing down) -->
+  <g class="anim-paw">
+    <path class="fill-main" d="M 16 13 C 14 13 14 15 15 17 C 14 19 16 20 18 20 C 20 20 22 19 21 17 C 22 15 22 13 20 13 Z" />
+    <!-- 两个用力按下的脚趾垫 -->
+    <ellipse cx="16.5" cy="11" rx="1.5" ry="2.5" class="fill-main" transform="rotate(-20 16.5 11)"/>
+    <ellipse cx="19.5" cy="11" rx="1.5" ry="2.5" class="fill-main" transform="rotate(20 19.5 11)"/>
+  </g>
+
+</svg>

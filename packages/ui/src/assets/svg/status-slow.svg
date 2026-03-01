@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+
+      /* 高延迟状态：半睁眼的缓慢眨眼，体现由于网络迟缓导致的困乏感 */
+      @keyframes lazyBlink {
+        0%, 80%, 100% { transform: scaleY(1); }
+        90% { transform: scaleY(0.1); }
+      }
+
+      .anim-lazy {
+        transform-origin: 12px 12px;
+        animation: lazyBlink 4s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- 极其困顿的半睁眼睑 (Half-open eye shape) -->
+  <!-- 上眼皮被压平低垂 -->
+  <path class="stroke-main" d="M 3 12 C 3 12, 6 10, 12 10 C 18 10, 21 12, 21 12" />
+  <!-- 下眼皮微肿 -->
+  <path class="stroke-main" d="M 3 12 C 3 12, 8 17, 12 17 C 16 17, 21 12, 21 12" />
+  
+  <g class="anim-lazy">
+    <!-- 被遮住一半的垂直瞳孔 -->
+    <ellipse cx="12" cy="13" rx="2" ry="3.5" class="fill-main" />
+  </g>
+
+</svg>

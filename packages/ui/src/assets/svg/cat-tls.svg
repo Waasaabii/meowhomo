@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <style>
+      .stroke-bold { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-thin { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .bg-fill { fill: var(--bg-color, #ffffff); }
+      .accent-fill { fill: currentColor; }
+
+      /* 优雅的上下均匀微浮动（Elegant floating） */
+      @keyframes elegantHove {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+      /* 金黄色的钥匙孔/提灯光芒闪烁 */
+      @keyframes keyGlow {
+        0%, 100% { opacity: 0.6; transform: scale(0.9); }
+        50% { opacity: 1; transform: scale(1.1); }
+      }
+
+      .anim-head { transform-origin: 24px 34px; animation: elegantHove 4s ease-in-out infinite; }
+      .anim-glow { transform-origin: 10px 38px; animation: keyGlow 2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- 上半身 (穿着带斗篷的优雅长袍/修女服/法袍 Cloak) -->
+  <path class="stroke-bold bg-fill" d="M 8 48 C 8 36, 40 36, 40 48" />
+  <path class="stroke-thin" d="M 24 38 L 24 48" /> <!-- 衣服前襟缝隙 -->
+
+  <!-- 手中提着代表加密验证的巨大“钥匙/提灯”组合体 (Secure Key Lantern) -->
+  <!-- 抓握钥匙的右手柄 -->
+  <g transform="translate(18, 42) rotate(-15)">
+    <path class="stroke-bold bg-fill" d="M -8 -8 C -12 -12, -4 -20, 0 -16 C 4 -12, -4 -4, -8 -8 Z" />
+    <!-- 钥匙杆部往下延伸 -->
+    <path class="stroke-bold" d="M -4 -12 L -20 -28" />
+    <path class="stroke-bold" d="M -16 -24 L -12 -28 M -20 -28 L -16 -32" /> <!-- 钥匙齿 -->
+  </g>
+  <ellipse cx="14" cy="40" rx="3" ry="5" class="stroke-bold bg-fill" transform="rotate(-30 14 40)" />
+
+  <!-- 发光的匙端 -->
+  <circle cx="8" cy="24" r="6" class="fill-main anim-glow" fill-opacity="0.3" />
+
+  <!-- 头部主容器 -->
+  <g class="anim-head">
+    <!-- 包子脸框 -->
+    <path class="stroke-bold bg-fill" d="M 24 36 C 38 36, 40 24, 40 18 C 40 10, 34 6, 24 6 C 14 6, 8 10, 8 18 C 8 24, 10 36, 24 36 Z" />
+
+    <!-- 修女/牧师宽大的连帽 (Hooded cloak) 将猫耳包裹在内 -->
+    <path class="stroke-bold bg-fill" d="M 6 24 C 6 6, 42 6, 42 24 C 42 34, 38 40, 24 40 C 10 40, 6 34, 6 24 Z" />
+    
+    <!-- 但是帽子顶端鼓起了猫耳形状 (Hidden cat ears under hood) -->
+    <path class="stroke-bold" d="M 12 12 L 8 4 L 18 8" />
+    <path class="stroke-bold" d="M 36 12 L 40 4 L 30 8" />
+    
+    <!-- 额头发丝 -->
+    <path class="stroke-thin bg-fill" d="M 12 18 C 18 12, 30 12, 36 18 C 30 14, 18 14, 12 18 Z" />
+
+    <!-- 高冷优雅的眯眯眼/微笑眼 (Closed smiling eyes -v-) -->
+    <g class="stroke-bold">
+      <path d="M 14 24 Q 18 26 22 24" />
+      <path d="M 34 24 Q 30 26 26 24" />
+    </g>
+    
+    <!-- 端庄的小猫嘴的微笑 -->
+    <path class="stroke-thin" d="M 22 30 Q 24 32 24 30 Q 24 32 26 30" />
+    
+    <!-- 脸颊一丝丝高雅红晕 -->
+    <line x1="14" y1="28" x2="16" y2="28" class="stroke-thin" stroke-opacity="0.5" />
+    <line x1="32" y1="28" x2="34" y2="28" class="stroke-thin" stroke-opacity="0.5" />
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+
+      /* 在线状态：健康的绿色脉冲呼吸猫眼 */
+      @keyframes pupilPulse {
+        0%, 100% { transform: scaleY(1) scaleX(1); opacity: 0.8; }
+        50% { transform: scaleY(1.2) scaleX(1.1); opacity: 1; }
+      }
+
+      .anim-pupil {
+        transform-origin: 12px 12px;
+        animation: pupilPulse 2s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- 上下眼睑 (大大的杏眼) -->
+  <path class="stroke-main" d="M 3 12 C 3 12, 8 5, 12 5 C 16 5, 21 12, 21 12 C 21 12, 16 19, 12 19 C 8 19, 3 12, 3 12 Z" />
+  
+  <!-- 猫眼特征性的垂直瞳孔 -->
+  <ellipse cx="12" cy="12" rx="2" ry="4.5" class="fill-main anim-pupil" />
+
+</svg>

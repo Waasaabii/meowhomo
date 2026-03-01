@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-icon { fill: currentColor; }
+
+      /* 猫耳微动效（保持一致的萌属性节律） */
+      @keyframes earMew {
+        0%, 100% { transform: translateY(0); }
+        30% { transform: translateY(-1.5px); }
+        50% { transform: translateY(0); }
+        70% { transform: translateY(-1.5px); }
+      }
+
+      /* 指使棒（Router arrow）的周期性分发/挥舞动效，暗示路由策略的运作 */
+      @keyframes routeBlink {
+        0%, 100% { transform: translateX(0) scale(1); opacity: 0.5; }
+        50% { transform: translateX(2px) scale(1.1); opacity: 1; }
+      }
+      
+      .ear-l { transform-origin: 5px 3px; animation: earMew 2s ease-out infinite; }
+      .ear-r { transform-origin: 19px 3px; animation: earMew 2s ease-out infinite 0.2s; }
+      
+      /* 两条分发线路的交替流转闪动 */
+      .route-1 { animation: routeBlink 1.5s ease-in-out infinite; }
+      .route-2 { animation: routeBlink 1.5s ease-in-out infinite 0.75s; }
+    </style>
+  </defs>
+
+  <!-- 顶部：两个结构化融合的小猫耳 -->
+  <g class="ear-l">
+    <path class="stroke-icon" d="M 3 6 L 3 1 L 7 6" />
+  </g>
+  <g class="ear-r">
+    <path class="stroke-icon" d="M 21 6 L 21 1 L 17 6" />
+  </g>
+
+  <!-- 主体：一个分发器/路由策略指示板（Strategy Routing） -->
+  <!-- 左侧分发源点（统一入口） -->
+  <circle cx="5" cy="14" r="2.5" class="stroke-icon" />
+  
+  <!-- 分流通道一：往右上方路由 -->
+  <path class="stroke-icon" d="M 8 13 L 13 9 L 16 9" />
+  <g class="route-1">
+    <path class="stroke-icon" d="M 17 6 L 20 9 L 17 12" />
+  </g>
+
+  <!-- 分流通道二：往右下方路由 -->
+  <path class="stroke-icon" d="M 8 15 L 13 19 L 16 19" />
+  <g class="route-2">
+    <path class="stroke-icon" d="M 17 16 L 20 19 L 17 22" />
+  </g>
+
+</svg>

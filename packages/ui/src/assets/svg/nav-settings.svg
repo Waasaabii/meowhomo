@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="nav-icon">
+  <defs>
+    <style>
+      .stroke-icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-icon { fill: currentColor; }
+
+      @keyframes earMew {
+        0%, 100% { transform: translateY(0); }
+        30% { transform: translateY(-1.5px); }
+        50% { transform: translateY(0); }
+        70% { transform: translateY(-1.5px); }
+      }
+
+      /* 扳手拧动（Wrench twist）的动效，仅 hover 或 active 状态触发 */
+      @keyframes twist {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-15deg); }
+        75% { transform: rotate(20deg); }
+      }
+      
+      .ear-l { transform-origin: 3px 5px; animation: earMew 2s ease-out infinite; }
+      .ear-r { transform-origin: 21px 5px; animation: earMew 2s ease-out infinite 0.2s; }
+      
+      /* 当作为侧边栏元素 hover 时，整个扳手产生拧螺丝的力反馈动作 */
+      .nav-icon:hover .anim-wrench,
+      .nav-icon[data-active="true"] .anim-wrench { 
+        animation: twist 0.6s ease-in-out; 
+        transform-origin: 16px 16px; 
+      }
+    </style>
+  </defs>
+
+  <!-- 上方：依然是家族式的融合猫耳骨架 -->
+  <g class="ear-l">
+    <path class="stroke-icon" d="M 3 8 L 3 3 L 7 8" />
+  </g>
+  <g class="ear-r">
+    <path class="stroke-icon" d="M 21 8 L 21 3 L 17 8" />
+  </g>
+
+  <!-- 主体：一个倾斜的、充满科技感的工业扳手/螺丝批 (Settings/Adjust) -->
+  <g class="anim-wrench">
+    <!-- 扳手柄身 -->
+    <path class="stroke-icon" d="M 14 14 L 6 22" />
+    <path class="stroke-icon" d="M 12 12 L 4 20" />
+    <path class="stroke-icon" d="M 6 22 A 1 1 0 0 0 4 20" />
+    
+    <!-- 扳手头部（夹持部分） -->
+    <path class="stroke-icon" d="M 13 13 C 10 10 14 6 18 10 C 22 14 18 18 15 15" />
+    
+    <!-- 扳手中间的滑锁/刻度孔 -->
+    <circle cx="16" cy="12" r="1.5" class="fill-icon" />
+  </g>
+
+  <!-- 散落的两个修剪/设置点缀火花星标 -->
+  <circle cx="7" cy="11" r="1" class="fill-icon" />
+  <circle cx="11" cy="6" r="1" class="fill-icon" />
+
+</svg>

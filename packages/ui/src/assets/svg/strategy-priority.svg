@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <style>
+      .stroke-main { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-main { fill: currentColor; }
+
+      /* 优先排序：依次高亮闪烁，代表按顺序依次连通检测 */
+      @keyframes orderBlink {
+        0%, 100% { opacity: 0.3; transform: scale(0.9); }
+        50% { opacity: 1; transform: scale(1.1); }
+      }
+
+      .dot-1 { animation: orderBlink 1.5s infinite 0s; transform-origin: 6px 6px; }
+      .dot-2 { animation: orderBlink 1.5s infinite 0.5s; transform-origin: 6px 12px; }
+      .dot-3 { animation: orderBlink 1.5s infinite 1s; transform-origin: 6px 18px; }
+    </style>
+  </defs>
+
+  <!-- 优先级/Fallback策略：一个带猫爪印记的排序列表 -->
+  <!-- 左侧代表顺序的节点圆点 -->
+  <circle cx="6" cy="6" r="2" class="fill-main dot-1" />
+  <circle cx="6" cy="12" r="2" class="fill-main dot-2" />
+  <circle cx="6" cy="18" r="2" class="fill-main dot-3" />
+
+  <!-- 右侧的队列项框线 -->
+  <path class="stroke-main" d="M 11 6 L 20 6" />
+  <path class="stroke-main" d="M 11 12 L 18 12" />
+  <path class="stroke-main" d="M 11 18 L 16 18" />
+
+</svg>
