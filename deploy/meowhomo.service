@@ -1,0 +1,15 @@
+[Unit]
+Description=MeowHomo - Clash 订阅转化 & 策略管理面板
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/meowhomo/meowhomo-server
+WorkingDirectory=/opt/meowhomo
+Restart=always
+RestartSec=5
+MemoryMax=512M
+CPUQuota=50%
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package meowhomo.engine;
+
+option go_package = "github.com/Waasaabii/meowhomo/engine/proto";
+
+// MeowHomo 内核管理 gRPC 接口
+service MihomoEngine {
+  // 启动引擎
+  rpc Start(StartRequest) returns (StatusResponse);
+  // 停止引擎
+  rpc Stop(Empty) returns (StatusResponse);
+  // 重载配置
+  rpc Reload(ReloadRequest) returns (StatusResponse);
+  // 获取引擎状态
+  rpc GetStatus(Empty) returns (StatusResponse);
+  // 获取活跃连接
+  rpc GetConnections(Empty) returns (ConnectionsResponse);
+  // 获取流量统计
+  rpc GetTraffic(Empty) returns (TrafficResponse);
+  // 日志流（服务端推送）
+  rpc StreamLogs(Empty) returns (stream LogEntry);
+}
+
+message Empty {}
+
+message StartRequest {
+  // mihomo 配置 YAML 内容
+  string config_yaml = 1;
+}
+
+message ReloadRequest {
+  string config_yaml = 1;
+}
+
+message StatusResponse {
+  bool running = 1;
+  string version = 2;
+  int64 uptime_seconds = 3;
+  int64 memory_bytes = 4;
+  int32 connections = 5;
+  string error = 6;
+}
+
+message ConnectionsResponse {
+  repeated Connection connections = 1;
+}
+
+message Connection {
+  string id = 1;
+  string source = 2;
+  string destination = 3;
+  string proxy = 4;
+  string rule = 5;
+  int64 upload_bytes = 6;
+  int64 download_bytes = 7;
+  int64 start_time = 8;
+}
+
+message TrafficResponse {
+  int64 upload_total = 1;
+  int64 download_total = 2;
+  int64 upload_speed = 3;
+  int64 download_speed = 4;
+}
+
+message LogEntry {
+  // 日志来源角色
+  string source = 1;
+  // 日志级别: info, warn, error
+  string level = 2;
+  // 日志内容
+  string message = 3;
+  // 时间戳
+  int64 timestamp = 4;
+}

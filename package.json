@@ -1,0 +1,13 @@
+{
+  "name": "meowhomo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun --filter @meowhomo/web dev",
+    "build": "bun --filter @meowhomo/web build",
+    "lint": "bun --filter '*' lint"
+  }
+}

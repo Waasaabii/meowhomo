@@ -1,0 +1,55 @@
+# Rust
+/target/
+crates/*/target/
+
+# Go
+engine/mihomo
+engine/bin/
+
+# Node
+node_modules/
+.pnp.*
+apps/web/dist/
+packages/*/dist/
+
+# Tauri
+apps/web/src-tauri/target/
+
+# Build
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Data
+*.db
+*.db-journal
+data/
+backups/
+
+# Config (生成的，不跟踪)
+config.yaml
+.installed
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 参考项目
+tem/
+
+# Certificates
+*.pem
+*.key
+*.crt

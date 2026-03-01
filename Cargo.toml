@@ -1,0 +1,57 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/server",
+    "crates/core",
+    "crates/tauri-plugin",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/Waasaabii/meowhomo"
+
+[workspace.dependencies]
+# Web 框架
+axum = "0.8"
+tokio = { version = "1", features = ["full"] }
+tower = "0.5"
+tower-http = { version = "0.6", features = ["cors", "fs"] }
+
+# 序列化
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+
+# 数据库
+sea-orm = { version = "1", features = ["sqlx-sqlite", "sqlx-postgres", "runtime-tokio-rustls"] }
+
+# gRPC
+tonic = "0.12"
+prost = "0.13"
+
+# 认证
+jsonwebtoken = "9"
+
+# TLS / ACME
+rustls = "0.23"
+rustls-acme = "0.11"
+
+# 反向代理
+hyper = { version = "1", features = ["full"] }
+hyper-util = "0.1"
+
+# GeoIP
+maxminddb = "0.27"
+
+# 日志
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# 工具
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1"
+thiserror = "2"
+rust-embed = "8"
